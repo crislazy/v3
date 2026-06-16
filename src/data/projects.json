@@ -1,0 +1,24 @@
+
+[
+    {
+        "title": "Webring",
+        "description": "The webring for cat lovers",
+        "url": "https://github.com/crislazy/webring",
+        "tags": ["JavaScript", "Website"],
+        "featured": true
+    },
+    {
+        "title": "Blob",
+        "description": "A simple Discord bot",
+        "url": "https://github.com/crislazy/blob",
+        "tags": ["Python", "Discord"],
+        "featured": false
+    },
+    {
+        "title": "SlackBlob",
+        "description": "A fun little slack bot for your Slack channel",
+        "url": "https://github.com/crislazy/slackblob",
+        "tags": ["JavaScript", "Slack"],
+        "featured": true
+    }
+]

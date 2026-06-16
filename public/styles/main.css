@@ -9,6 +9,14 @@
     --accent: #7aa2ff;
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #eaeaea;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -62,11 +70,6 @@ section {
 
 .spacer-15px {
     height: 15px;
-}
-
-.projects {
-    overflow-y: auto;
-    max-height: 400px;
 }
 
 .project:hover{
@@ -146,4 +149,19 @@ ul {
 
 .post-card h2 {
     margin-bottom: 5px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tag {
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: var(--bg);
 }

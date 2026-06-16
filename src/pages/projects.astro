@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import projects from "../data/projects.json";
+
+---
+
+<BaseLayout title="Projects">
+  <section>
+    <a class="back" href="/">← Back</a>
+    <h1>Projects</h1>
+
+    <div class="projects">
+      {projects.map((project) => (
+        <a
+        class="post-card"
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        >
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+
+        <div class="tags">
+            {project.tags.map(tag => (
+            <span class="tag">{tag}</span>
+            ))}
+        </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
