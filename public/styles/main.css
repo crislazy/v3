@@ -71,11 +71,14 @@ section {
 
 .project:hover{
     cursor: pointer;
+    transform: translateY(-2px);
+    border-color: var(--accent);
 }
 
 .project{
     border: 2px solid var(--border);
     padding: 5px;
+    transition: 0.2s;
 }
 
 .projects-tab{
@@ -87,4 +90,60 @@ section {
 
 ul {
   list-style: none;
+}
+
+.blog {
+    width: min(70vw, 750px);
+    text-align: left;
+}
+
+.blog h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.blog .date {
+    opacity: 0.6;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.blog p {
+    margin-bottom: 12px;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+.blog-index {
+    width: min(70vw, 800px);
+    text-align: left;
+}
+
+.post-card {
+    display: block;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.2s;
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.post-card h2 {
+    margin-bottom: 5px;
 }

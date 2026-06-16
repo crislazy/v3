@@ -1,8 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+
+posts.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const latest = posts[0];
 ---
 
-<BaseLayout>
+<BaseLayout title="Cris">
 	<div class="welcome">
 		<h1 id="welcomeh1">Hello there👋</h1>
 	</div>
@@ -47,6 +56,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 			</script>
 		</div>
 	</section>
+<section class="blog-index" id="latest-post">
+  <h2>Latest Post</h2>
+
+  <a class="post-card" href={`/blog/${latest.id}/`} style="margin-left: 15px;">
+    <h3>{latest.data.title}</h3>
+    <p class="date">
+      {latest.data.date.toDateString()}
+    </p>
+  </a>
+  <a class="back" href="/blog" style="margin-bottom: 0px;">See all posts</a>
+</section>
 	<section id="contact">
 		<h2>Contact</h2>
 		<ul>
