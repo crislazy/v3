@@ -22,5 +22,7 @@ const { Content } = await render(post);
     <h1>{post.data.title}</h1>
     <p class="date">{post.data.date.toDateString()}</p>
     <Content />
+    <div id="c_widget"></div>
+    <script src="/js/comment-widget.js" is:inline></script>
   </article>
 </BaseLayout>

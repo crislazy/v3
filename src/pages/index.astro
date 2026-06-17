@@ -34,7 +34,17 @@ const featuredProjects = projects.filter(
 			<i class="fa-brands fa-html5" title="HTML"></i>
 			<i class="fa-brands fa-css3-alt" title="CSS"></i>
 		</div>
-		<p>Also, if you are searching for my 88x31 button, it's work in progress.</p>
+		<p>My 88x31 button(click to copy code):</p>
+		<img src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif" width="88px" height="31px" alt="Cris is lazy" onclick="copyButtonCode()">
+		<script is:inline>
+		function copyButtonCode() {
+			navigator.clipboard.writeText(
+				'<a href="https://crislzy.xyz" target="_blank"><img src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif" width="88px" height="31px" alt="Cris is lazy"></a>'
+			);
+			alert("Code copied")
+		}
+		</script>
+		<p>Also you should check out the <a href="/webrings">webrings page</a>.</p>
 	</section>
 	<section id="projects" class="projects">
 	<h2>Featured Projects</h2>
@@ -92,5 +102,6 @@ const featuredProjects = projects.filter(
 		<a href="https://jbc.lol" target="_blank"><img src="https://jbc.lol/sitebutton3.png" alt="jb's site" style="image-rendering: pixelated;"/></a>
 		<a href="https://nomaakip.xyz" target="_blank"><img src="https://nomaakip.xyz/img/buttons/button.png" alt="button"></a>
 		<a href="https://dimden.dev/" target="_blank"><img src="https://dimden.dev/services/images/88x31.gif"></a>
+		<img src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif" width="88px" height="31px">
 	</section>
 </BaseLayout>

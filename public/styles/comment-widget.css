@@ -1,0 +1,152 @@
+/* Main widget container */
+#c_widget {
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+
+    background: var(--surface);
+    border: 2px solid var(--border);
+
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 16px;
+    color: var(--text);
+}
+
+/* Buttons + inputs */
+#c_widget button,
+#c_widget input[type=submit] {
+    padding: 6px 10px;
+    font-family: "JetBrains Mono", sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    transition: 0.2s;
+    text-transform: none;
+}
+
+#c_widget button:hover,
+#c_widget input[type=submit]:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    cursor: pointer;
+}
+
+#c_widget button:disabled,
+#c_widget input[type=submit]:disabled {
+    opacity: 0.5;
+}
+
+/* Input area */
+#c_inputDiv {
+    margin-bottom: 15px;
+    padding: 12px;
+
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+
+/* Title bar */
+#c_widgetTitle {
+    margin: -12px;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+
+    text-transform: none;
+    font-weight: bold;
+}
+
+/* Inputs */
+.c-input {
+    padding: 6px;
+    color: var(--text);
+
+    background: var(--bg);
+    border: 1px solid var(--border);
+    outline: none;
+}
+
+.c-input:focus {
+    border-color: var(--accent);
+}
+
+.c-textInput {
+    width: calc(100% - 10px);
+    max-width: 900px;
+    resize: none;
+}
+
+/* Comments */
+.c-comment,
+.c-reply {
+    margin-bottom: 12px;
+    padding: 10px;
+
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.c-reply {
+    width: 90%;
+    margin-left: auto;
+}
+
+/* Reply container */
+.c-replyContainer {
+    margin-top: 10px;
+    padding: 10px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+/* Name + metadata */
+.c-name {
+    display: inline-block;
+    margin-right: 10px;
+
+    text-transform: none;
+    font-weight: bold;
+}
+
+.c-timestamp {
+    float: right;
+    opacity: 0.6;
+}
+
+/* Links */
+.c-site {
+    color: var(--links);
+    text-decoration: none;
+}
+
+.c-site:hover {
+    color: var(--accent);
+}
+
+/* Text content */
+.c-text {
+    margin-top: 8px;
+    padding: 10px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+
+    font-family: inherit;
+    font-size: 14px;
+}
+
+/* Pagination */
+#c_pagination {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.c-paginationButton {
+    margin: 0 4px;
+}
