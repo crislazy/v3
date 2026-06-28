@@ -14,7 +14,7 @@ To get started, run this into your computer's terminal:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/crislazy/site && cd site
+   git clone https://github.com/crislazy/v3 && cd v3
    ```
 
 2. Install dependencies:
