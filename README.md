@@ -1,43 +1,34 @@
-# Astro Starter Kit: Minimal
+<h1 align="center">CrisLzy's Website V3</h1>
+<p align="center"><i>The source code for crislzy.xyz</i></p>
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## About
+This is my personal website that I made in Astro. It features my projects, blog, an about me and some more stuff. For basic tracking I use a self-hosted instance of [Umami](https://umami.is).
+> Note: Please remove the following line from "/src/layouts/BaseLayout.astro": ```<script async src="https://umm.crislzy.hackclub.app/script.js" data-website-id="f7d5b61a-6a79-4a8f-b6fa-5bfd393d5184" is:inline></script>```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Also, the oneko cat code is from [this](https://www.cssscript.com/demo/cat-follow-cursor-oneko).
+This project is under the MIT License.
 
-## 🚀 Project Structure
+## Getting Started
+To get started, run this into your computer's terminal:
 
-Inside of your Astro project, you'll see the following folders and files:
+1. Clone the repository:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+   ```bash
+   git clone https://github.com/crislazy/site && cd site
+   ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+2. Install dependencies:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+   ```bash
+   npm install
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+3. Run the website on your computer:
 
-## 🧞 Commands
+    ``` bash
+    npm run dev
+    ```
 
-All commands are run from the root of the project, from a terminal:
+4. Open [localhost:4321](http://localhost:4321) in your browser
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+> Note: If you fork or reuse this project, you may want to remove or update the `CNAME` file to use your own domain.
