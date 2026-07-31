@@ -177,3 +177,22 @@ ul {
     display: flex;
     justify-content: center;
 }
+
+.skill-icons {
+  width: 75%;
+  max-width: 100%;
+}
+
+.skill-icons-row2 {
+  width: 22%;
+  max-width: 100%;
+}
+
+.homelab-card {
+    font-size: medium;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: var(--border);
+    width: fit-content;
+    padding: 4px;
+}

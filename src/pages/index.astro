@@ -24,16 +24,63 @@ const featuredProjects = projects.filter(
 	<section class="hero" id="about">
 		<h2>About Me</h2>
 		<p>I'm Cris(or Crislzy), a teen developer from Romania and a Hack Club member.</p> 
-		<p>I love coding websites, Slack Bolt bots in JavaScript and random projects for fun.</p>
+		<p>I love coding websites, Slack Bolt bots in JavaScript or TypeScript and random projects for fun.</p>
 		<p>I also like self-hosting things and experimenting with hardware, where I rarely fry stuff.</p>
 		<div class="spacer-15px"></div>
-		<p>Languages I use (or am currently learning):</p>
-		<div class="home-coding-lang">
-			<i class="fa-brands fa-js" title="JavaScript"></i>
-			<i class="fa-brands fa-python" title="Python"></i>
-			<i class="fa-brands fa-html5" title="HTML"></i>
-			<i class="fa-brands fa-css3-alt" title="CSS"></i>
+		<h3>Tech Stacks</h3>
+		<img
+		src="https://skillicons.dev/icons?i=html,css,astro,ts,js,py,bun,nodejs,sqlite,git,github,linux,vscode&theme=dark"
+		alt="Tech stack"
+		class="skill-icons"
+		/>
+		<h3>Learning More About</h3>
+		<img
+		src="https://skillicons.dev/icons?i=ts,docker,linux,sqlite&theme=dark"
+		alt="Currently learning"
+		class="skill-icons-row2"
+		/>
+		<h3>Homelab</h3>
+
+		<details class="homelab-details">
+		<summary>View live status</summary>
+
+		<div class="homelab-card">
+			<p><strong id="server">Loading...</strong></p>
+			<p id="online">Checking...</p>
+			<p id="temp">Temp: --°C</p>
+			<p id="uptime">Uptime: --</p>
+			<a href="https://webcris.icu" target="_blank">See more...</a>
 		</div>
+		</details>
+
+		<script is:inline>
+		async function updateStatus() {
+		try {
+			const res = await fetch("https://webcris.icu/api/status");
+			if (!res.ok) throw new Error();
+
+			const status = await res.json();
+
+			document.getElementById("server").textContent = status.server;
+			document.getElementById("online").textContent = "🟢 Online";
+			document.getElementById("temp").textContent =
+			`Temp ${status.temperature}°C`;
+
+			const h = Math.floor(status.uptime_seconds / 3600);
+			const m = Math.floor((status.uptime_seconds % 3600) / 60);
+			const s = status.uptime_seconds % 60;
+
+			document.getElementById("uptime").textContent =
+			`Uptime ${h}h ${m}m ${s}s`;
+		} catch {
+			document.getElementById("server").textContent = "Unavailable";
+			document.getElementById("online").textContent = "🔴 Offline";
+		}
+		}
+
+		updateStatus();
+		setInterval(updateStatus, 1000);
+		</script>
 		<p>My 88x31 button(click to copy code):</p>
 		<img src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif" width="88px" height="31px" alt="Cris is lazy" onclick="copyButtonCode()">
 		<script is:inline>
