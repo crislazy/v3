@@ -3,7 +3,7 @@
 
 ## About
 This is my personal website that I made in Astro. It features my projects, blog, an about me and some more stuff. For basic tracking I use a self-hosted instance of [Umami](https://umami.is).
-> Note: Please remove the following line from "/src/layouts/BaseLayout.astro": ```<script async src="https://umm.crislzy.hackclub.app/script.js" data-website-id="f7d5b61a-6a79-4a8f-b6fa-5bfd393d5184" is:inline></script>```
+> Note: Please remove the following line from "/src/layouts/BaseLayout.astro": ```<script async src="https://umm.crislzy.xyz/script.js" data-website-id="f7d5b61a-6a79-4a8f-b6fa-5bfd393d5184" is:inline></script>```
 
 Also, the oneko cat code is from [this](https://www.cssscript.com/demo/cat-follow-cursor-oneko).
 This project is under the MIT License.

@@ -179,13 +179,19 @@ ul {
 }
 
 .skill-icons {
-  width: 75%;
-  max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.skill-icons-row2 {
-  width: 22%;
-  max-width: 100%;
+.skill-icons img {
+    width: 36px;
+    height: 36px;
+}
+
+.skill-icons.learning img {
+    width: 36px;
+    height: 36px;
 }
 
 .homelab-card {
@@ -195,4 +201,13 @@ ul {
     background-color: var(--border);
     width: fit-content;
     padding: 4px;
+}
+
+#footer {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

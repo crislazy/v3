@@ -4,149 +4,267 @@ import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
 
-posts.sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
-);
+posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const latest = posts[0];
 
 import projects from "../data/projects.json";
 
-const featuredProjects = projects.filter(
-  project => project.featured
-);
+const featuredProjects = projects.filter((project) => project.featured);
 ---
 
 <BaseLayout title="Cris">
-	<div class="welcome">
-		<h1 id="welcomeh1">Hello there👋</h1>
-	</div>
-	<section class="hero" id="about">
-		<h2>About Me</h2>
-		<p>I'm Cris(or Crislzy), a teen developer from Romania and a Hack Club member.</p> 
-		<p>I love coding websites, Slack Bolt bots in JavaScript or TypeScript and random projects for fun.</p>
-		<p>I also like self-hosting things and experimenting with hardware, where I rarely fry stuff.</p>
-		<div class="spacer-15px"></div>
-		<h3>Tech Stacks</h3>
-		<img
-		src="https://skillicons.dev/icons?i=html,css,astro,ts,js,py,bun,nodejs,sqlite,git,github,linux,vscode&theme=dark"
-		alt="Tech stack"
-		class="skill-icons"
-		/>
-		<h3>Learning More About</h3>
-		<img
-		src="https://skillicons.dev/icons?i=ts,docker,linux,sqlite&theme=dark"
-		alt="Currently learning"
-		class="skill-icons-row2"
-		/>
-		<h3>Homelab</h3>
+    <div class="welcome">
+        <h1 id="welcomeh1">Hello there👋</h1>
+    </div>
+    <section class="hero" id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm Cris(or Crislzy), a teen developer from Romania and a Hack Club
+            member.
+        </p>
+        <p>
+            I love coding websites, Slack Bolt bots in JavaScript or TypeScript
+            and random projects for fun.
+        </p>
+        <p>
+            I also like self-hosting things and experimenting with hardware,
+            where I rarely fry stuff.
+        </p>
+        <div class="spacer-15px"></div>
+        <h3>What I'm Using</h3>
+        <div class="skill-icons">
+            <img src="https://skillicons.dev/icons?i=html" alt="HTML" />
+            <img src="https://skillicons.dev/icons?i=css" alt="CSS" />
+            <img src="https://skillicons.dev/icons?i=astro" alt="Astro" />
+            <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" />
+            <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" />
+            <img src="https://skillicons.dev/icons?i=py" alt="Python" />
+            <img src="https://skillicons.dev/icons?i=bun" alt="Bun" />
+            <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" />
+            <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite" />
+            <img src="https://skillicons.dev/icons?i=git" alt="Git" />
+            <img src="https://skillicons.dev/icons?i=github" alt="GitHub" />
+            <img src="https://skillicons.dev/icons?i=linux" alt="Linux" />
+            <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" />
+        </div>
 
-		<details class="homelab-details">
-		<summary>View live status</summary>
+        <h3>Currently Learning</h3>
+        <div class="skill-icons learning">
+            <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" />
+            <img src="https://skillicons.dev/icons?i=docker" alt="Docker" />
+            <img src="https://skillicons.dev/icons?i=linux" alt="Linux" />
+            <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite" />
+        </div>
+        <h3>Homelab</h3>
 
-		<div class="homelab-card">
-			<p><strong id="server">Loading...</strong></p>
-			<p id="online">Checking...</p>
-			<p id="temp">Temp: --°C</p>
-			<p id="uptime">Uptime: --</p>
-			<a href="https://webcris.icu" target="_blank">See more...</a>
-		</div>
-		</details>
+        <details class="homelab-details">
+            <summary>View live status</summary>
 
-		<script is:inline>
-		async function updateStatus() {
-		try {
-			const res = await fetch("https://webcris.icu/api/status");
-			if (!res.ok) throw new Error();
+            <div class="homelab-card">
+                <p>
+                    <strong id="server">Loading...</strong>
+                </p>
+                <p id="online">Checking...</p>
+                <p id="temp">Temp: --°C</p>
+                <p id="uptime">Uptime: --</p>
+                <a href="https://webcris.icu" target="_blank">
+                    See more...
+                </a>
+            </div>
+        </details>
 
-			const status = await res.json();
+        <script is:inline>
+            async function updateStatus() {
+                try {
+                    const res = await fetch("https://webcris.icu/api/status");
+                    if (!res.ok) throw new Error();
 
-			document.getElementById("server").textContent = status.server;
-			document.getElementById("online").textContent = "🟢 Online";
-			document.getElementById("temp").textContent =
-			`Temp ${status.temperature}°C`;
+                    const status = await res.json();
 
-			const h = Math.floor(status.uptime_seconds / 3600);
-			const m = Math.floor((status.uptime_seconds % 3600) / 60);
-			const s = status.uptime_seconds % 60;
+                    document.getElementById("server").textContent =
+                        status.server;
+                    document.getElementById("online").textContent = "🟢 Online";
+                    document.getElementById("temp").textContent =
+                        `Temp ${status.temperature}°C`;
 
-			document.getElementById("uptime").textContent =
-			`Uptime ${h}h ${m}m ${s}s`;
-		} catch {
-			document.getElementById("server").textContent = "Unavailable";
-			document.getElementById("online").textContent = "🔴 Offline";
-		}
-		}
+                    const h = Math.floor(status.uptime_seconds / 3600);
+                    const m = Math.floor((status.uptime_seconds % 3600) / 60);
+                    const s = status.uptime_seconds % 60;
 
-		updateStatus();
-		setInterval(updateStatus, 10000);
-		</script>
-		<p>My 88x31 button(click to copy code):</p>
-		<img src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif" width="88px" height="31px" alt="Cris is lazy" onclick="copyButtonCode()">
-		<script is:inline>
-		function copyButtonCode() {
-			navigator.clipboard.writeText(
-				'<a href="https://crislzy.xyz" target="_blank"><img src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif" width="88px" height="31px" alt="Cris is lazy"></a>'
-			);
-			alert("Code copied")
-		}
-		</script>
-		<p>Also you should check out the <a href="/webrings">webrings page</a>.</p>
-	</section>
-	<section id="projects" class="projects">
-	<h2>Featured Projects</h2>
+                    document.getElementById("uptime").textContent =
+                        `Uptime ${h}h ${m}m ${s}s`;
+                } catch {
+                    document.getElementById("server").textContent =
+                        "Unavailable";
+                    document.getElementById("online").textContent =
+                        "🔴 Offline";
+                }
+            }
 
-	<div class="projects-tab">
-		{featuredProjects.map((project) => (
-		<a
-			class="post-card"
-			href={project.url}
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<h3>{project.title}</h3>
-			<p>{project.description}</p>
+            updateStatus();
+            setInterval(updateStatus, 10000);
+        </script>
+        <p>My 88x31 button(click to copy code):</p>
+        <img
+            src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif"
+            width="88px"
+            height="31px"
+            alt="Cris is lazy"
+            onclick="copyButtonCode()"
+        />
+        <script is:inline>
+            function copyButtonCode() {
+                navigator.clipboard.writeText(
+                    '<a href="https://crislzy.xyz" target="_blank"><img src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif" width="88px" height="31px" alt="crislzy.xyz"></a>',
+                );
+                alert("Code copied");
+            }
+        </script>
+        <p>
+            Also you should check out the <a href="/webrings">webrings page</a>.
+        </p>
+    </section>
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
 
-			<div class="tags">
-			{project.tags.map((tag) => (
-				<span class="tag">{tag}</span>
-			))}
-			</div>
-		</a>
-		))}
-	</div>
+        <div class="projects-tab">
+            {featuredProjects.map((project) => (
+                <a
+                    class="post-card"
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
 
-	<a class="back" href="/projects">
-		See all projects
-	</a>
-	</section>
-<section class="blog-index" id="latest-post">
-  <h2>Latest Post</h2>
+                    <div class="tags">
+                        {project.tags.map((tag) => (
+                            <span class="tag">{tag}</span>
+                        ))}
+                    </div>
+                </a>
+            ))}
+        </div>
 
-  <a class="post-card" href={`/blog/${latest.id}/`} style="margin-left: 15px;">
-    <h3>{latest.data.title}</h3>
-    <p class="date">
-      {latest.data.date.toDateString()}
-    </p>
-  </a>
-  <a class="back" href="/blog" style="margin-bottom: 0px;">See all posts</a>
-</section>
-	<section id="contact">
-		<h2>Contact</h2>
-		<ul>
-			<li>Email: <a href="mailto:me@crislzy.xyz">me [at] crislzy [dot] xyz</a></li>
-			<li>HackClub Slack: <a href="https://hackclub.enterprise.slack.com/team/U09TNMQ9MCZ" target="_blank" rel="noopener noreferrer me">CrisLzy</a></li>
-			<li>Github: <a href="https://github.com/crislazy">Crislazy</a></li>
-		</ul>
-	</section>
-	<section id="88x31">
-		<h2>88x31 Buttons</h2>
-        <a href="https://alexanderisashy.one" target="_blank"><img src="https://cdn.hackclub.com/019eb7f6-9096-7359-9ae6-b5d5c4bfa22f/gateway.png" alt="alex!"/></a>
-        <a href="https://hackclub.com" target="_blank"><img src="https://cdn.hackclub.com/019eb7f9-f75f-7bde-ae35-10a1dd55073c/hackclub.gif" alt="come join the club!" width="88" height="31"/></a>
-		<a href="https://squirrelz.xyz" target="_blank"><img src="https://squirrelz.xyz/squirrelz.png"></a>
-		<a href="https://jbc.lol" target="_blank"><img src="https://jbc.lol/sitebutton3.png" alt="jb's site" style="image-rendering: pixelated;"/></a>
-		<a href="https://nomaakip.xyz" target="_blank"><img src="https://nomaakip.xyz/img/buttons/button.png" alt="button"></a>
-		<a href="https://dimden.dev/" target="_blank"><img src="https://dimden.dev/services/images/88x31.gif"></a>
-		<img src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif" width="88px" height="31px">
-	</section>
+        <a class="back" href="/projects">
+            See all projects
+        </a>
+    </section>
+    <section class="blog-index" id="latest-post">
+        <h2>Latest Post</h2>
+
+        <a
+            class="post-card"
+            href={`/blog/${latest.id}/`}
+            style="margin-left: 15px;"
+        >
+            <h3>{latest.data.title}</h3>
+            <p class="date">{latest.data.date.toDateString()}</p>
+        </a>
+        <a class="back" href="/blog" style="margin-bottom: 0px;">
+            See all posts
+        </a>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <ul>
+            <li>
+                Email:
+                <a href="mailto:me@crislzy.xyz">me [at] crislzy [dot] xyz</a>
+            </li>
+            <li>
+                HackClub Slack:
+                <a
+                    href="https://hackclub.enterprise.slack.com/team/U09TNMQ9MCZ"
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                >
+                    CrisLzy
+                </a>
+            </li>
+            <li>
+                Github:
+                <a
+                    href="https://github.com/crislazy"
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                >
+                    Crislazy
+                </a>
+            </li>
+            <li>
+                Discord:
+                <a
+                    href="https://discord.com/users/1528816581105156200"
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                >
+                    Cris(@someone_named_cris)
+                </a>
+            </li>
+            <li>
+                Discord Server:
+                <a
+                    href="https://r.webcris.icu/discord"
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                >
+                    here :3
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section id="88x31">
+        <h2>88x31 Buttons</h2>
+        <a href="https://alexanderisashy.one" target="_blank">
+            <img
+                src="https://cdn.hackclub.com/019eb7f6-9096-7359-9ae6-b5d5c4bfa22f/gateway.png"
+                alt="alexanderisashy.one"
+            />
+        </a>
+        <a href="https://hackclub.com" target="_blank">
+            <img
+                src="https://cdn.hackclub.com/019eb7f9-f75f-7bde-ae35-10a1dd55073c/hackclub.gif"
+                alt="hackclub.com"
+                width="88"
+                height="31"
+            />
+        </a>
+        <a href="https://squirrelz.xyz" target="_blank">
+            <img
+                src="https://squirrelz.xyz/squirrelz.png"
+                alt="squirrelz.xyz"
+            />
+        </a>
+        <a href="https://jbc.lol" target="_blank">
+            <img
+                src="https://jbc.lol/sitebutton3.png"
+                alt="jbc.lol"
+                style="image-rendering: pixelated;"
+            />
+        </a>
+        <a href="https://nomaakip.xyz" target="_blank">
+            <img
+                src="https://nomaakip.xyz/img/buttons/button.png"
+                alt="nomaakip.xyz"
+            />
+        </a>
+        <a href="https://dimden.dev/" target="_blank">
+            <img
+                src="https://dimden.dev/services/images/88x31.gif"
+                alt="dimden.dev"
+            />
+        </a>
+        <a href="https://gizzy.gay">
+            <img src="https://gizzy.gay/88x31.svg" alt="gizzy's button" />
+        </a>
+        <a href="https://firefox.com">
+            <img
+                src="https://cdn.hackclub.com/01a04019-5807-7b1f-89e8-81ed1a59d9e5/firefox.gif"
+                alt="firefox button"
+            />
+        </a>
+    </section>
 </BaseLayout>

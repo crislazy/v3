@@ -2,45 +2,72 @@
 const { title = "Cris" } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-    <title>{title}</title>
-    
-    <meta charset="UTF-8">
+    <head>
+        <title>{title}</title>
 
-    <link rel="stylesheet" type="text/css" href="/styles/main.css?v=0.2">
-    <link href="/assets/favicon.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+        <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="/styles/main.css?v=0.2" />
+        <link
+            href="https://cdn.hackclub.com/01a096bf-e2cb-7e4c-aa9e-98303a253dce/pfp.png"
+            rel="icon"
+            type="image/png"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
 
-    <meta name="description" content="Teen developer from Romania and a Hack Club member" />
-    <meta name="keywords" content="personal site, cris, crislzy, portfolio" />
-    <meta name="author" content="Cris">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="robots" content="noai, noimageai" />
-    <meta name="googlebot" content="noimageai" />
+        <meta
+            name="description"
+            content="Teen developer from Romania and a Hack Club member"
+        />
+        <meta
+            name="keywords"
+            content="personal site, cris, crislzy, portfolio"
+        />
+        <meta name="author" content="Cris" />
 
-    <meta property="og:site_name" content="Cris" />
-    <meta property="og:title" content="Crislzy" />
-    <meta property="og:description" content="Teen developer from Romania and a Hack Club member" />
-    <meta property="og:url" content="https://crislzy.xyz" />
+        <meta name="robots" content="noai, noimageai" />
+        <meta name="googlebot" content="noimageai" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Crislzy" />
-    <meta name="twitter:description" content="Teen developer from Romania and a Hack Club member" />
+        <meta property="og:site_name" content="Cris" />
+        <meta property="og:title" content="Crislzy" />
+        <meta
+            property="og:description"
+            content="Teen developer from Romania and a Hack Club member"
+        />
+        <meta property="og:url" content="https://crislzy.xyz" />
 
-    <meta name="generator" content={Astro.generator} />
-	</head>
-	<body>
-    <main>
-      <slot />
-    </main>
-    <script src="/js/oneko.js" is:inline></script>
-    <script async src="https://umm.crislzy.hackclub.app/script.js" data-website-id="f7d5b61a-6a79-4a8f-b6fa-5bfd393d5184" is:inline></script>
-	</body>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Crislzy" />
+        <meta
+            name="twitter:description"
+            content="Teen developer from Romania and a Hack Club member"
+        />
+
+        <meta name="generator" content={Astro.generator} />
+    </head>
+    <body>
+        <main>
+            <slot />
+        </main>
+        <script src="/js/oneko.js" is:inline></script>
+        <!-- <script async src="https://umm.crislzy.xyz/script.js" data-website-id="f7d5b61a-6a79-4a8f-b6fa-5bfd393d5184" is:inline></script> -->
+        <section id="footer" style="footer">
+            <p>&copy; 2026 Crislzy</p>
+            <a href="https://status.crislzy.xyz/status/home">Status Page</a>
+        </section>
+        <br />
+    </body>
 </html>

@@ -8,20 +8,6 @@
         "featured": true
     },
     {
-        "title": "Blob",
-        "description": "A simple Discord bot",
-        "url": "https://github.com/crislazy/blob",
-        "tags": ["Python", "Discord", "FlavorTown"],
-        "featured": false
-    },
-    {
-        "title": "SlackBlob",
-        "description": "A fun little slack bot for your Slack channel",
-        "url": "https://github.com/crislazy/slackblob",
-        "tags": ["JavaScript", "Slack", "Stardance"],
-        "featured": false
-    },
-    {
         "title": "Whiskers",
         "description": "A configurable Slack selfbot with Last.fm, Hackatime, auto replies, and SQLite.",
         "url": "https://github.com/crislazy/whiskers",
