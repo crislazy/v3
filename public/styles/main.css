@@ -166,11 +166,15 @@ ul {
   background: var(--bg);
 }
 
+[id="88x31"] a {
+    text-decoration: none;
+}
+
 .webrings {
     display: flex;
     flex-direction: column;
-    align-items: center; /* center horizontally */
-    gap: 20px; /* space between webrings */
+    align-items: center;
+    gap: 20px;
 }
 
 .webrings > div {
