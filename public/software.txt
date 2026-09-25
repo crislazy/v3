@@ -1,0 +1,41 @@
+===== Software I Use =====
+
+// -> MAIN DEV
+// Editor: Zed
+// Browser: Firefox
+// VS Code
+
+// -> LANGUAGES / WEB
+// HTML
+// CSS
+// JavaScript
+// TypeScript
+// Python
+
+// -> FRAMEWORKS / RUNTIMES
+// Astro
+// Node.js
+// Bun
+
+// -> DATABASES
+// SQLite
+// Supabase
+
+// -> DEVELOPMENT TOOLS
+// Git
+// GitHub
+// Docker
+
+// -> SELF-HOSTING
+// Raspberry Pi OS
+// Docker
+// Cloudflare Tunnel
+// Tailscale
+// Forgejo
+// Copyparty
+// Discord and Slack bots
+
+
+---------------------------
+-> Crislzy.xyz / 2026
+// Btw I'm not a pro at all these coding lanugages/frameworks mentioned here, I may know a bit of some and a lot of others

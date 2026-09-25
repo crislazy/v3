@@ -1,0 +1,50 @@
+=========== Tech I Use ===========
+
+A list of tech I use almost daily
+
+
+// -> LAPTOP
+// Model: Dell Latitude E5470
+// OS: Windows 10 Pro
+// CPU: Intel i5-6200U
+// GPU: Intel HD Graphics 520
+// RAM: 16 GB
+
+
+// -> SHITBOX
+// Name: ASUS shitbox
+// OS: Linux Mint
+// GPU: Nvidia GeForce GT 520
+// RAM: 6 GB
+// Storage: 1 TB HDD
+
+
+// -> PHONE
+// Model: Samsung Galaxy S25 FE
+// OS: Android 16(One UI 8.5)
+// Storage: 128 GB
+// RAM: 8 GB
+
+
+// -> RASPBERRY PI 4
+// Name: cris-pi server
+// OS: Raspberry Pi OS Lite
+// RAM: 4 GB
+// Storage-1: 64 GB MicroSD
+// Storage-2: 1 TB USB HDD
+
+
+===== Other Stuff I Use =====
+
+// -> WATCH
+// Model: Huawei Watch Fit 3
+
+// -> HEADPHONES
+// Model: JVC HA-S36W
+
+// -> MAIN MOUSE
+// Model: Asus Marshmellow MD100
+
+
+---------------------------
+-> Crislzy.xyz / 2026

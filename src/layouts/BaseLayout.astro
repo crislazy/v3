@@ -63,15 +63,50 @@ const { title = "Cris" } = Astro.props;
             <slot />
         </main>
         <script src="/js/oneko.js" is:inline></script>
-        <script
+        <!-- <script
             async
             src="https://umm.crislzy.xyz/script.js"
             data-website-id="f7d5b61a-6a79-4a8f-b6fa-5bfd393d5184"
             is:inline
-        ></script>
+        ></script> -->
         <section id="footer">
-            <p>&copy; 2026 Crislzy</p>
-            <a href="https://status.crislzy.xyz/status/home">Status Page</a>
+            <div class="footer-1">
+                <p>&copy; 2026 Crislzy</p>
+                <a href="https://status.crislzy.xyz/status/home">Status Page</a>
+            </div>
+            <p>
+                Site last updated: <span id="last-updated">Loading...</span>
+            </p>
+            <script is:inline>
+                async function getLastUpdated() {
+                    try {
+                        const res = await fetch(
+                            "https://api.github.com/repos/crislazy/v3/commits?per_page=1",
+                        );
+
+                        if (!res.ok) throw new Error();
+
+                        const data = await res.json();
+                        const date = new Date(data[0].commit.committer.date);
+
+                        document.getElementById("last-updated").textContent =
+                            date.toLocaleString("en-GB", {
+                                day: "2-digit",
+                                month: "2-digit",
+                                year: "numeric",
+                                hour: "2-digit",
+                                minute: "2-digit",
+                                second: "2-digit",
+                                hour12: false,
+                            });
+                    } catch {
+                        document.getElementById("last-updated").textContent =
+                            "Unknown";
+                    }
+                }
+
+                getLastUpdated();
+            </script>
         </section>
         <br />
     </body>
