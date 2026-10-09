@@ -15,96 +15,148 @@ const featuredProjects = projects.filter((project) => project.featured);
 
 <BaseLayout title="Cris">
     <div class="welcome">
-        <h1 id="welcomeh1">Hello there👋</h1>
+        <h1 id="welcomeh1">Welcome Traveler!</h1>
     </div>
     <section class="hero" id="about">
-        <h2>About Me</h2>
-        <p>
-            I'm Cris(or Crislzy), a teen developer from Romania and a Hack Club
-            member.
-        </p>
-        <p>
-            I love coding websites, Slack Bolt bots in JavaScript or TypeScript
-            and random projects for fun.
-        </p>
-        <p>
-            I also like self-hosting things and experimenting with hardware,
-            where I rarely fry stuff.
-        </p>
-        <p>
-            Also see what I use → <a href="/tech.txt">tech.txt</a> /
-            <a href="/software.txt">software.txt</a>
-        </p>
-        <br />
-        <h3>Homelab</h3>
+        <div class="hero-left">
+            <img src="https://cdn.hackclub.com/01a096bf-e2cb-7e4c-aa9e-98303a253dce/pfp.png" />
+            <h3 class="status">
+                I'm <span id="status">idk...</span>
+            </h3>
+            <script is:inline>
+                async function discordstatus() {
+                    const statusElement = document.getElementById("status");
 
-        <details class="homelab-details">
-            <summary>View live status</summary>
+                    try {
+                        const res = await fetch(
+                            "https://api.lanyard.rest/v1/users/1528816581105156200",
+                        );
 
-            <div class="homelab-card">
-                <p>
-                    <strong id="server">Loading...</strong>
-                </p>
-                <p id="online">Checking...</p>
-                <p id="temp">Temp: --°C</p>
-                <p id="uptime">Uptime: --</p>
-                <a href="https://webcris.icu" target="_blank">
-                    See more...
-                </a>
-            </div>
-        </details>
+                        if (!res.ok)
+                            throw new Error("failed for some reason :/");
 
-        <script is:inline>
-            async function updateStatus() {
-                try {
-                    const res = await fetch("https://webcris.icu/api/status");
-                    if (!res.ok) throw new Error();
+                        const result = await res.json();
 
-                    const status = await res.json();
+                        if (!result.success)
+                            throw new Error("api error i think");
 
-                    document.getElementById("server").textContent =
-                        status.server;
-                    document.getElementById("online").textContent = "🟢 Online";
-                    document.getElementById("temp").textContent =
-                        `Temp ${status.temperature}°C`;
+                        const status = result.data.discord_status;
+                        const online = status !== "offline";
 
-                    const h = Math.floor(status.uptime_seconds / 3600);
-                    const m = Math.floor((status.uptime_seconds % 3600) / 60);
-                    const s = status.uptime_seconds % 60;
-
-                    document.getElementById("uptime").textContent =
-                        `Uptime ${h}h ${m}m ${s}s`;
-                } catch {
-                    document.getElementById("server").textContent =
-                        "Unavailable";
-                    document.getElementById("online").textContent =
-                        "🔴 Offline";
+                        statusElement.textContent = online
+                            ? "online"
+                            : "offline";
+                        statusElement.style.color = online
+                            ? "#8de7b0"
+                            : "#ff6b6b";
+                    } catch {
+                        statusElement.textContent = "status unavailable";
+                    }
                 }
-            }
 
-            updateStatus();
-            setInterval(updateStatus, 10000);
-        </script>
-        <br />
-        <p>My 88x31 button(click to copy code):</p>
-        <img
-            src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif"
-            width="88px"
-            height="31px"
-            alt="Cris is lazy"
-            onclick="copyButtonCode()"
-        />
-        <script is:inline>
-            function copyButtonCode() {
-                navigator.clipboard.writeText(
-                    '<a href="https://crislzy.xyz" target="_blank"><img src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif" width="88px" height="31px" alt="crislzy.xyz"></a>',
-                );
-                alert("Code copied");
-            }
-        </script>
-        <p>
-            Also you should check out the <a href="/webrings">webrings page</a>.
-        </p>
+                discordstatus();
+                setInterval(discordstatus, 30000);
+            </script>
+        </div>
+        <div class="hero-right">
+            <h2>Shit about me</h2>
+            <p>
+                I'm Cris(or Crislzy) and I'm a teen developer(kinda) and also a{" "}
+                <a href="https://hackclub.com">Hackclub</a> member.
+            </p>
+            <p>
+                I sometimes code random stuff like Discord/Slack bots and random
+                websites "for fun"(I'm just bored...)
+            </p>
+            <p>
+                I also enjoy self-hosting(until an error pops up a few times
+                then I mostly ragequit...)
+            </p>
+            <p>
+                Here's a really cool list of stuff I use:
+                <a href="/tech.txt">tech</a> and
+                <a href="/software.txt">software</a>
+            </p>
+            <br />
+            <h3>Little Homelab</h3>
+
+            <details class="homelab-details" style="cursor: pointer;">
+                <summary>View live info abt it if you care...</summary>
+
+                <div class="homelab-card">
+                    <p>
+                        <strong id="server">Loading...</strong>
+                    </p>
+                    <p id="online">Checking...</p>
+                    <p id="temp">Temp: --C</p>
+                    <p id="uptime">Uptime: --</p>
+                    <a href="https://webcris.icu" target="_blank">
+                        Check out more "detailed" info
+                    </a>
+                </div>
+            </details>
+
+            <script is:inline>
+                async function updateStatus() {
+                    try {
+                        const res = await fetch(
+                            "https://webcris.icu/api/status",
+                        );
+                        if (!res.ok) throw new Error();
+
+                        const status = await res.json();
+
+                        document.getElementById("server").textContent =
+                            status.server;
+                        document.getElementById("online").textContent =
+                            "Online";
+                        document.getElementById("temp").textContent =
+                            `Temp ${status.temperature}C`;
+
+                        const h = Math.floor(status.uptime_seconds / 3600);
+                        const m = Math.floor(
+                            (status.uptime_seconds % 3600) / 60,
+                        );
+                        const s = status.uptime_seconds % 60;
+
+                        document.getElementById("uptime").textContent =
+                            `Uptime ${h}h ${m}m ${s}s`;
+                    } catch {
+                        document.getElementById("server").textContent =
+                            "Unavailable";
+                        document.getElementById("online").textContent =
+                            "Offline";
+                    }
+                }
+
+                updateStatus();
+                setInterval(updateStatus, 10000); // every 10s
+            </script>
+            <br />
+            <p>
+                My cool little 88x31 button (click it to copy the code for it):
+            </p>
+            <img
+                src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif"
+                width="88px"
+                height="31px"
+                alt="Cris is lazy"
+                onclick="copyButtonCode()"
+                style="cursor: pointer;"
+            />
+            <script is:inline>
+                function copyButtonCode() {
+                    navigator.clipboard.writeText(
+                        '<a href="https://crislzy.xyz" target="_blank"><img src="https://user-cdn.hackclub-assets.com/019ed4b1-6838-746d-a6a4-1402670fe71c/88x31.gif" width="88px" height="31px" alt="crislzy.xyz"></a>',
+                    );
+                    alert("Code copied");
+                }
+            </script>
+            <p>
+                Also you should check out the{" "}
+                <a href="/webrings">webrings page</a>.
+            </p>
+        </div>
     </section>
     <section id="projects" class="projects">
         <h2>Featured Projects</h2>
@@ -132,6 +184,19 @@ const featuredProjects = projects.filter((project) => project.featured);
         <a class="back" href="/projects">
             See all projects
         </a>
+    </section>
+    <section id="coding-stats" class="coding-stats">
+        <h2>Really cool coding stats</h2>
+        <img
+            src="https://github-readme-stats.hackclub.dev/api/wakatime?username=22875&api_domain=hackatime.hackclub.com&theme=ocean_dark&custom_title=Hackatime+Stats&layout=compact&cache_seconds=0&langs_count=8"
+            alt="Hackatime coding statistics"
+            loading="lazy"
+        />
+        <img
+            src="https://heatmap.shymike.dev/?id=22875&timezone=Europe/Bucharest"
+            alt="heatmap"
+            loading="lazy"
+        />
     </section>
     <section class="blog-index" id="latest-post">
         <h2>Latest Post</h2>

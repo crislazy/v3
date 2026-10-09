@@ -2,16 +2,16 @@
 [
     {
         "title": "Webring",
-        "description": "The webring for cat lovers",
+        "description": "A (mostly abandoned) webring for people who like cats :3",
         "url": "https://webring.crislzy.xyz",
         "tags": ["JavaScript", "Website"],
         "featured": true
     },
     {
         "title": "Whiskers",
-        "description": "A configurable Slack selfbot with Last.fm, Hackatime, auto replies, and SQLite.",
+        "description": "A bot I made for a Hackclub YSWS",
         "url": "https://github.com/crislazy/whiskers",
-        "tags": ["TypeScript", "Slack", "Selfbot", "Doppel"],
+        "tags": ["TypeScript", "Slack", "Selfbot"],
         "featured": true
     }
 ]

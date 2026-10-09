@@ -1,20 +1,21 @@
+/* If it works it works ¯\(ツ)/¯
+Tbh idk if all of this code is used or not(just like for the rest of my website...)
+-# it also can be a bit broken... */
 :root {
-    --bg: #0f0f10;
-    --surface: #151517;
-    --border: #2a2a2a;
+    --bg: #111019;
+    --surface: #191624;
+    --surface-hover: #211c31;
+    --border: #393147;
 
-    --text: #eaeaea;
-    --links: #0080ff;
+    --text: #f0ebfa;
+    --muted: #aaa1bd;
 
-    --accent: #7aa2ff;
-}
+    --links: #b69cff;
+    --accent: #b69cff;
 
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #eaeaea;
+    --pink: #ff91c8;
+    --green: #8de7b0;
+    --amber: #f2c879;
 }
 
 * {
@@ -28,7 +29,7 @@ html {
 }
 
 body {
-    font-family: "JetBrains Mono", sans-serif;
+    font-family: "Comic Sans MS", sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
@@ -57,12 +58,41 @@ section {
     background-color: var(--surface);
     border: 2px solid var(--border);
     padding: 10px;
+    border-radius: 15px;
 
     width: min(70vw, 800px);
 
     margin: 0 auto;
 }
 
+.hero {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.hero-right p::before {
+    content: "~ ";
+    color: var(--pink);
+    font-weight: bold;
+}
+
+.hero-left img {
+    width: 256px;
+    height: auto;
+    border-radius: 100%;
+    border: 6px solid #000;
+}
+
+.status {
+    text-align: center;
+}
+
+.status #status{
+    font-weight: bolder;
+    font-size: 30px;
+    -webkit-text-stroke: 1px whitesmoke;
+}
 
 .home-coding-lang{
     font-size: 25px;
@@ -93,6 +123,12 @@ section {
 
 ul {
   list-style: none;
+}
+
+ul li::before {
+    content: "-> ";
+    color: var(--pink);
+    font-weight: bold;
 }
 
 .blog {
@@ -140,6 +176,7 @@ ul {
     text-decoration: none;
     color: var(--text);
     transition: 0.2s;
+    border-radius: 10px;
 }
 
 .post-card:hover {
@@ -220,4 +257,19 @@ ul {
     display: flex;
     flex-direction: row;
     gap: 10px;
+}
+
+.coding-stats {
+    text-align: center;
+}
+
+.coding-stats img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 12px auto;
+}
+
+.coding-stats h2 {
+    margin-bottom: 10px;
 }
