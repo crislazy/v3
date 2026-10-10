@@ -9,7 +9,7 @@ const { title = "Cris" } = Astro.props;
 
         <meta charset="UTF-8" />
 
-        <link rel="stylesheet" type="text/css" href="/styles/main.css?v=0.2" />
+        <link rel="stylesheet" type="text/css" href="/styles/main.css?v=0.3" />
         <link
             href="https://cdn.hackclub.com/01a096bf-e2cb-7e4c-aa9e-98303a253dce/pfp.png"
             rel="icon"
@@ -59,16 +59,42 @@ const { title = "Cris" } = Astro.props;
         <meta name="generator" content={Astro.generator} />
     </head>
     <body>
+        <div class="side-ad side-ad-left">
+            <a
+                href="https://r.webcris.icu/discord"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="/assets/ads/placeholder-150x300.png"
+                    alt="Discord Server Ad Placeholder"
+                />
+            </a>
+        </div>
+
+        <div class="side-ad side-ad-right">
+            <a
+                href="http://localhost:4321/webrings/humanring"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="/assets/ads/placeholder-150x300.png"
+                    alt="Humanring Ad Placeholder"
+                />
+            </a>
+        </div>
+
         <main>
             <slot />
         </main>
         <script src="/js/oneko.js" is:inline></script>
-        <!-- <script
+        <script
             async
             src="https://umm.crislzy.xyz/script.js"
             data-website-id="f7d5b61a-6a79-4a8f-b6fa-5bfd393d5184"
             is:inline
-        ></script> -->
+        ></script>
         <section id="footer">
             <div class="footer-1">
                 <p>&copy; 2026 Crislzy</p>
@@ -77,6 +103,10 @@ const { title = "Cris" } = Astro.props;
             <p>
                 Site last updated: <span id="last-updated">Loading...</span>
             </p>
+
+            <button id="toggle-ads" type="button">
+                Hide ads
+            </button>
             <script is:inline>
                 async function getLastUpdated() {
                     try {
@@ -109,5 +139,6 @@ const { title = "Cris" } = Astro.props;
             </script>
         </section>
         <br />
+        <script is:inline src="/scripts/ads.js"></script>
     </body>
 </html>

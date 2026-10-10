@@ -273,3 +273,137 @@ ul li::before {
 .coding-stats h2 {
     margin-bottom: 10px;
 }
+
+
+.side-ad {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    z-index: 100;
+}
+
+.side-ad img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+}
+
+.side-ad-left {
+    left: 15px;
+}
+
+.side-ad-right {
+    right: 15px;
+}
+
+.side-ad[hidden] {
+    display: none !important;
+}
+
+.lastfm {
+    text-align: center;
+}
+
+.lastfm #lastfm-prefix {
+    font-size: 20px;
+}
+
+.lastfm #lastfm-song {
+    font-weight: bolder;
+    font-size: 20px;
+    -webkit-text-stroke: 1px whitesmoke;
+}
+
+/* Hide the ads on smaller screens */
+@media (max-width: 1200px) {
+    .side-ad {
+        display: none;
+    }
+}
+
+/* Mobile fixes */
+@media (max-width: 700px) {
+    main {
+        padding: 12px 0 30px;
+        gap: 14px;
+    }
+
+    section,
+    .blog,
+    .blog-index {
+        width: calc(100% - 20px);
+        max-width: 100%;
+    }
+
+    /* Stack your about section vertically */
+    .hero {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-left img {
+        width: min(65vw, 220px);
+        max-width: 100%;
+    }
+
+    .hero-right {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    /* Make headings fit smaller screens */
+    h1 {
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Prevent coding stats images from overflowing */
+    .coding-stats img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Let project cards use the available width */
+    .projects-tab {
+        margin-left: 0;
+    }
+
+    .post-card {
+        margin-left: 0 !important;
+        overflow-wrap: anywhere;
+    }
+
+    /* Keep long contact links from breaking the layout */
+    #contact li {
+        overflow-wrap: anywhere;
+    }
+
+    /* Hide fixed side ads on phones */
+    .side-ad {
+        display: none;
+    }
+
+    /* Wrap footer items if needed */
+    .footer-1 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

@@ -11,6 +11,7 @@ const latest = posts[0];
 import projects from "../data/projects.json";
 
 const featuredProjects = projects.filter((project) => project.featured);
+import LastFm from "../components/lastfm.astro";
 ---
 
 <BaseLayout title="Cris">
@@ -57,6 +58,8 @@ const featuredProjects = projects.filter((project) => project.featured);
                 discordstatus();
                 setInterval(discordstatus, 30000);
             </script>
+            <hr />
+            <LastFm />
         </div>
         <div class="hero-right">
             <h2>Shit about me</h2>
@@ -156,6 +159,10 @@ const featuredProjects = projects.filter((project) => project.featured);
                 Also you should check out the{" "}
                 <a href="/webrings">webrings page</a>.
             </p>
+            <p>
+                Maybe check out the updatelogs
+                <a href="/updates.txt">here</a>
+            </p>
         </div>
     </section>
     <section id="projects" class="projects">
@@ -214,7 +221,7 @@ const featuredProjects = projects.filter((project) => project.featured);
         </a>
     </section>
     <section id="contact">
-        <h2>Contact</h2>
+        <h2>Contact and other stuff</h2>
         <ul>
             <li>
                 Email:
@@ -260,6 +267,16 @@ const featuredProjects = projects.filter((project) => project.featured);
                     here :3
                 </a>
             </li>
+            <li>
+                Boykisser Page:
+                <a
+                    href="https://boykisser.gg/@cris"
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                >
+                    here :3
+                </a>
+            </li>
         </ul>
     </section>
     <section id="88x31">
@@ -289,12 +306,6 @@ const featuredProjects = projects.filter((project) => project.featured);
                 src="https://jbc.lol/sitebutton3.png"
                 alt="jbc.lol"
                 style="image-rendering: pixelated;"
-            />
-        </a>
-        <a href="https://nomaakip.xyz" target="_blank">
-            <img
-                src="https://nomaakip.xyz/img/buttons/button.png"
-                alt="nomaakip.xyz"
             />
         </a>
         <a href="https://dimden.dev/" target="_blank">

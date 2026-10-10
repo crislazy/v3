@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <section>
+        <a class="back" href="/" style="color:#7aa2ff">
+            ← Back
+        </a>
+        <h1>HumanRing</h1>
+        <h2>A webring for humans</h2>
+        <br />
+        <h3>About</h3>
+        <p>
+            HumanRing is a <strong>TOTALLY SERIOUS</strong> webring made for
+            human who have webring.
+        </p>
+        <p>On this page you will find:</p>
+        <ul>
+            <li>
+                <a href="#requirements">Requirements</a>
+            </li>
+            <li>
+                <a href="#join">How to Join</a>
+            </li>
+        </ul>
+        <br />
+        <h3 id="requirements">Requirements:</h3>
+        <p>To join the webring:</p>
+        <ul>
+            <li>Be a human(REALLY IMPORTANT)</li>
+            <li>You must have a website</li>
+            <li>
+                Your website must not contain any NSFW or 18+ content, nor
+                racist or hateful content
+            </li>
+            <li>
+                Your website should contain the widget before aplying(shown
+                below)
+            </li>
+        </ul>
+        <br />
+        <h3 id="join">How to Join</h3>
+        <p>
+            After making sure that you fit the requirements above, you first
+            need to add the widget(if you didn't already).
+        </p>
+        <p>
+            You can add the following code and replacing <i>YOUR_URL</i> with
+            your site(click to copy):
+        </p>
+        <pre
+            onclick="copycode()"
+            style="cursor: pointer;"
+        ><code id="widget-code">{`<div style="width: fit-content; border: 2px outset; text-align:center">
+  <p style="margin: 0; padding: 0.1em; border: 2px inset">
+      This site is a member of humanring.
+  </p>
+  <div style="display: flex">
+      <a
+          style="flex: 1; margin: 0; padding: 0.1em; border: 2px inset"
+          href="https://webri.ng/webring/humanring/previous?via=YOUR_URL"
+      >
+          Previous Site
+      </a>
+      <a
+          style="flex: 1; margin: 0; padding: 0.1em; border: 2px inset"
+          href="https://webri.ng/webring/humanring/random?via=YOUR_URL"
+      >
+          Random Site
+      </a>
+      <a
+          style="flex: 1; margin: 0; padding: 0.1em; border: 2px inset"
+          href="https://webri.ng/webring/humanring/next?via=YOUR_URL"
+      >
+          Next Site
+      </a>
+  </div>
+</div>`}</code></pre>
+        <br />
+        <p>
+            Or by making your own widget however you link by using these links
+            and replacing <i>YOUR_URL</i> with your site:
+        </p>
+        <ul>
+            <li>https://webri.ng/webring/humanring/previous?via=YOUR_URL</li>
+            <li>https://webri.ng/webring/humanring/next?via=YOUR_URL</li>
+            <li>https://webri.ng/webring/humanring/random?via=YOUR_URL</li>
+        </ul>
+        <br />
+        <p>After adding your widget, you can join by one of these ways:</p>
+        <ul>
+            <li>
+                Sending me an email at{" "}
+                <a href="mailto:me@crislzy.xyz">me@crislzy.xyz</a> following{" "}
+                <a href="/webrings/humanring.txt">this template</a>
+            </li>
+            <li>
+                Completing <a href="#">this form</a>(comming soon)
+            </li>
+        </ul>
+
+        <script is:inline>
+            async function copycode() {
+                const code = document.getElementById("widget-code");
+                if (!code) return;
+
+                try {
+                    await navigator.clipboard.writeText(code.textContent ?? "");
+                    alert("Widget code copied! :D");
+                } catch (err) {
+                    alert("Couldn't copy the code. Check the console!");
+                    console.error(err);
+                }
+            }
+        </script>
+        <style>
+            #widget-code {
+                font-family: monospace;
+                font-size: 13px;
+                color: var(--green);
+            }
+
+            pre:has(#widget-code) {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 12px;
+                overflow-x: auto;
+                cursor: pointer;
+            }
+
+            pre:has(#widget-code):hover {
+                border-color: var(--accent);
+            }
+        </style>
+    </section>
+</BaseLayout>
