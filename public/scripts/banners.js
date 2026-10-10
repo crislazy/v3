@@ -1,5 +1,5 @@
 const toggle = document.getElementById("toggle-ads");
-const ads = document.querySelectorAll(".side-ad");
+const ads = document.querySelectorAll(".side-banner");
 
 function updateAds(hidden) {
     ads.forEach((ad) => {

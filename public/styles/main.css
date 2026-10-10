@@ -275,7 +275,7 @@ ul li::before {
 }
 
 
-.side-ad {
+.side-banner {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
@@ -283,7 +283,7 @@ ul li::before {
     z-index: 100;
 }
 
-.side-ad img {
+.side-banner img {
     display: block;
     width: 100%;
     height: auto;
@@ -291,15 +291,15 @@ ul li::before {
     border-radius: 8px;
 }
 
-.side-ad-left {
+.side-banner-left {
     left: 15px;
 }
 
-.side-ad-right {
+.side-banner-right {
     right: 15px;
 }
 
-.side-ad[hidden] {
+.side-banner[hidden] {
     display: none !important;
 }
 
