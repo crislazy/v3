@@ -295,6 +295,20 @@ ul li::before {
     left: 15px;
 }
 
+.banner-label {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+
+    padding: 3px 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+
+    font-size: 10px;
+    line-height: 1.2;
+}
+
 .side-banner-right {
     right: 15px;
 }
@@ -319,7 +333,7 @@ ul li::before {
 
 /* Hide the ads on smaller screens */
 @media (max-width: 1200px) {
-    .side-ad {
+    .side-banner {
         display: none;
     }
 }
