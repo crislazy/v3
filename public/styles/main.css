@@ -18,6 +18,24 @@ Tbh idk if all of this code is used or not(just like for the rest of my website.
     --amber: #f2c879;
 }
 
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -31,12 +49,61 @@ html {
 body {
     font-family: "Comic Sans MS", sans-serif;
     background: var(--bg);
+    background-image: url("/assets/bg.gif");
+    background-repeat: repeat;
     color: var(--text);
     line-height: 1.6;
 }
 
 a {
     color: var(--links);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: min(80vw, 1000px);
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--green);
+    font-family: "JetBrains Mono", monospace;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-brand img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
 }
 
 main {
@@ -48,19 +115,13 @@ main {
     padding-top: 20px;
 }
 
-.welcome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 section {
     background-color: var(--surface);
     border: 2px solid var(--border);
     padding: 10px;
     border-radius: 15px;
 
-    width: min(70vw, 800px);
+    width: min(90vw, 900px);
 
     margin: 0 auto;
 }
@@ -88,10 +149,27 @@ section {
     text-align: center;
 }
 
-.status #status{
-    font-weight: bolder;
-    font-size: 30px;
-    -webkit-text-stroke: 1px whitesmoke;
+.status #status {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: var(--green);
+}
+
+.lastfm {
+    text-align: center;
+}
+
+.lastfm #lastfm-prefix {
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.lastfm #lastfm-song {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: bold;
+    font-size: 1rem;
+    overflow-wrap: anywhere;
 }
 
 .home-coding-lang{
@@ -132,8 +210,13 @@ ul li::before {
 }
 
 .blog {
-    width: min(70vw, 750px);
+    width: min(70vw, 850px);
     text-align: left;
+
+    background-color: var(--surface);
+    border: 2px solid var(--border);
+    padding: 10px;
+    border-radius: 15px;
 }
 
 .blog h1 {
@@ -240,6 +323,7 @@ ul li::before {
     margin-left: 5px;
     margin-bottom: 5px;
     background-color: var(--border);
+    font-family: "JetBrains Mono", monospace;
     width: fit-content;
     padding: 4px;
 }
@@ -274,68 +358,16 @@ ul li::before {
     margin-bottom: 10px;
 }
 
-
-.side-banner {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 150px;
-    z-index: 100;
+.easter-egg {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
 }
 
-.side-banner img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border: 2px solid var(--border);
-    border-radius: 8px;
-}
-
-.side-banner-left {
-    left: 15px;
-}
-
-.banner-label {
-    position: absolute;
-    bottom: 4px;
-    left: 4px;
-
-    padding: 3px 6px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-
-    font-size: 10px;
-    line-height: 1.2;
-}
-
-.side-banner-right {
-    right: 15px;
-}
-
-.side-banner[hidden] {
-    display: none !important;
-}
-
-.lastfm {
-    text-align: center;
-}
-
-.lastfm #lastfm-prefix {
-    font-size: 20px;
-}
-
-.lastfm #lastfm-song {
-    font-weight: bolder;
-    font-size: 20px;
-    -webkit-text-stroke: 1px whitesmoke;
-}
-
-/* Hide the ads on smaller screens */
-@media (max-width: 1200px) {
-    .side-banner {
-        display: none;
-    }
+.easter-egg img {
+  width: 60px;
+  height: 60px;
+  image-rendering: pixelated;
 }
 
 /* Mobile fixes */
@@ -410,14 +442,13 @@ ul li::before {
         overflow-wrap: anywhere;
     }
 
-    /* Hide fixed side ads on phones */
-    .side-ad {
-        display: none;
-    }
-
     /* Wrap footer items if needed */
     .footer-1 {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .easter-egg {
+        display: none;
     }
 }

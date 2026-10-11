@@ -18,10 +18,6 @@ const { Content } = await render(post);
 <BaseLayout title={post.data.title}>
     <script src="https://u.widget.st/ar.js"></script>
     <article class="blog">
-        <a class="back" href="/blog/">
-            ← Back
-        </a>
-
         <h1>{post.data.title}</h1>
         <p class="date">{post.data.date.toDateString()}</p>
         <Content />

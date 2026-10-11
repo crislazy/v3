@@ -59,42 +59,28 @@ const { title = "Cris" } = Astro.props;
         <meta name="generator" content={Astro.generator} />
     </head>
     <body>
-        <div class="side-banner side-banner-left">
-            <a
-                href="https://r.webcris.icu/discord"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img src="/assets/banner/discord.png" alt="Discord Server Ad" />
-            </a>
-            <a href="/about-ads" class="banner-label">
-                AD
-            </a>
-        </div>
-
-        <div class="side-banner side-banner-right">
-            <a
-                href="/webrings/humanring"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img src="/assets/banner/humanring.png" alt="Humanring Ad" />
-            </a>
-            <a href="/about-ads" class="banner-label">
-                AD
-            </a>
-        </div>
-
         <main>
+            <nav class="nav">
+                <a href="/" class="nav-brand">
+                    <img
+                        src="https://cdn.hackclub.com/01a096bf-e2cb-7e4c-aa9e-98303a253dce/pfp.png"
+                        alt="Cris"
+                    />
+                    <span>~/crislzy</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="/">[Home]</a>
+                    <a href="/#contact">[Contact]</a>
+                    <a href="/projects">[Projects]</a>
+                    <a href="/webrings">[Webrings]</a>
+                    <a href="/blog">[Blog]</a>
+                </div>
+            </nav>
+
             <slot />
         </main>
-        <script src="/js/oneko.js" is:inline></script>
-        <script
-            async
-            src="https://umm.crislzy.xyz/script.js"
-            data-website-id="f7d5b61a-6a79-4a8f-b6fa-5bfd393d5184"
-            is:inline
-        ></script>
+
         <section id="footer">
             <div class="footer-1">
                 <p>&copy; 2026 Crislzy</p>
@@ -103,42 +89,19 @@ const { title = "Cris" } = Astro.props;
             <p>
                 Site last updated: <span id="last-updated">Loading...</span>
             </p>
-
-            <button id="toggle-ads" type="button">
-                Hide ads
-            </button>
-            <script is:inline>
-                async function getLastUpdated() {
-                    try {
-                        const res = await fetch(
-                            "https://api.github.com/repos/crislazy/v3/commits?per_page=1",
-                        );
-
-                        if (!res.ok) throw new Error();
-
-                        const data = await res.json();
-                        const date = new Date(data[0].commit.committer.date);
-
-                        document.getElementById("last-updated").textContent =
-                            date.toLocaleString("en-GB", {
-                                day: "2-digit",
-                                month: "2-digit",
-                                year: "numeric",
-                                hour: "2-digit",
-                                minute: "2-digit",
-                                second: "2-digit",
-                                hour12: false,
-                            });
-                    } catch {
-                        document.getElementById("last-updated").textContent =
-                            "Unknown";
-                    }
-                }
-
-                getLastUpdated();
-            </script>
+            <script is:inline src="/js/lastupdate.js" />
         </section>
         <br />
-        <script is:inline src="/scripts/banners.js"></script>
+
+        <!--Oneko Cat Script-->
+        <script src="/js/oneko.js" is:inline></script>
+        <!-- Umami Script-->
+        {import.meta.env.PROD && (
+            <script
+                defer
+                src="https://umm.crislzy.xyz/script.js"
+                data-website-id="f7d5b61a-6a79-4a8f-b6fa-5bfd393d5184"
+            ></script>
+        )}
     </body>
 </html>

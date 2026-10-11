@@ -1,17 +1,20 @@
 
 [
     {
+        "title": "Humanring",
+        "description": "A webring for humans",
+        "url": "/webrings/humanring"
+    },
+    {
         "title": "Webring",
         "description": "A (mostly abandoned) webring for people who like cats :3",
         "url": "https://webring.crislzy.xyz",
-        "tags": ["JavaScript", "Website"],
-        "featured": true
+        "tags": ["JavaScript", "Website"]
     },
     {
         "title": "Whiskers",
         "description": "A bot I made for a Hackclub YSWS",
         "url": "https://github.com/crislazy/whiskers",
-        "tags": ["TypeScript", "Slack", "Selfbot"],
-        "featured": true
+        "tags": ["TypeScript", "Slack", "Selfbot"]
     }
 ]
