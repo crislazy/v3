@@ -3,33 +3,63 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
+    <link rel="stylesheet" type="text/css" href="/styles/webrings.css?v=0.1" />
     <section>
         <div class="webrings">
+            <h1>Webrings</h1>
             <!--HUMANRING-->
-            <div style="width: fit-content; border: 2px outset; text-align:center">
-                <p style="margin: 0; padding: 0.1em; border: 2px inset">
-                    This site is a member of humanring.
-                </p>
-                <div style="display: flex">
-                    <a
-                        style="flex: 1; margin: 0; padding: 0.1em; border: 2px inset"
-                        href="https://webri.ng/webring/humanring/previous?via=https%3A%2F%2Fcrislzy.xyz"
-                    >
-                        Previous Site
-                    </a>
-                    <a
-                        style="flex: 1; margin: 0; padding: 0.1em; border: 2px inset"
-                        href="/webrings/humanring"
-                    >
-                        About
-                    </a>
-                    <a
-                        style="flex: 1; margin: 0; padding: 0.1em; border: 2px inset"
-                        href="https://webri.ng/webring/humanring/next?via=https%3A%2F%2Fcrislzy.xyz"
-                    >
-                        Next Site
-                    </a>
-                </div>
+            <div class="ring humanring">
+                <a href="https://webri.ng/webring/humanring/previous?via=https://crislzy.xyz">&lt;-</a>
+                <a href="/webrings/humanring"class="title">HumanRing</a>
+                <a href="https://webri.ng/webring/humanring/random?via=https://crislzy.xyz" class="random"></a>
+                <a href="https://webri.ng/webring/humanring/next?via=https://crislzy.xyz">-&gt;</a>
+            </div>
+
+            <!--NOAI WEBRING-->
+            <div class="ring noai">
+                <a href="https://baccyflap.com/noai/?prv&s=clz">&lt;-</a>
+                <a href="https://baccyflap.com/noai"class="title">NoAI Webring</a>
+                <a href="https://baccyflap.com/noai/?rnd" class="random"></a>
+                <a href="https://baccyflap.com/noai/?nxt&s=clz">-&gt;</a>
+            </div>
+
+            <!--SWAGRING-->
+            <div class="ring swagring">
+                <a href="https://webring.nomaakip.xyz/webring?name=crislzy&to=prev">&lt;-</a>
+                <a href="https://webring.nomaakip.xyz"class="title">swagring</a>
+                <a href="https://webring.nomaakip.xyz/webring?name=crislzy&to=next">-&gt;</a>
+            </div>
+
+            <!--BUCKETRING-->
+            <div class="ring bucketring">
+                <a href="https://webring.bucketfish.me/redirect.html?to=prev&name=crislzy">&lt;-</a>
+                <a href="https://webring.bucketfish.me" class="title">bucketring</a>
+                <a href="https://webring.bucketfish.me/redirect.html?to=random&name=crislzy" class="random"></a>
+                <a href="https://webring.bucketfish.me/redirect.html?to=next&name=crislzy">-&gt;</a>
+            </div>
+
+            <!--MEOWRING-->
+            <div class="ring meowring">
+                <a href="https://webring.crislzy.xyz/webring.html?name=crislzy&to=prev">&lt;-</a>
+                <a href="https://webring.crislzy.xyz" class="title">meowring</a>
+                <a href="https://webring.crislzy.xyz/webring.html?name=crislzy&to=next">-&gt;</a>
+            </div>
+
+            <h2>Pending</h2>
+
+            <!--SILLY.CITY-->
+            <div class="ring sillycity">
+                <a href="https://silly.city/prev?user=crislzy">&lt;-</a>
+                <a href="https://silly.city/" class="title">silly city</a>
+                <a href="https://silly.city/next?user=crislzy">-&gt;</a>
+            </div>
+
+            <!--WEBMASTER WEBRING-->
+            <div class="ring webmaster">
+                <a href="https://webmasterwebring.netlify.app?crislzy-previous">&lt;-</a>
+                <a href="https://webmasterwebring.netlify.app" class="title">Webmaster Webring</a>
+                <a href="https://webmasterwebring.netlify.app?crislzy-random" class="random"></a>
+                <a href="https://webmasterwebring.netlify.app?crislzy-next">-&gt;</a>
             </div>
 
             <!--NYANRING-->
@@ -46,88 +76,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     type="text/javascript"
                     src="https://epiccity.nekoweb.org/ring/onionring-widget - small.js"
                 ></script>
-            </div>
-
-            <!--NOAI WEBRING-->
-            <div>
-                <map name="w95widget">
-                    <area
-                        href="https://baccyflap.com/noai"
-                        target="_blank"
-                        shape="rect"
-                        coords="0,0,308,22"
-                        alt="no ai webring"
-                        title="no ai webring"
-                    />
-                    <area
-                        href="https://baccyflap.com/noai/?prv&s=clz"
-                        target="_top"
-                        shape="rect"
-                        coords="56,36,130,58"
-                        alt="previous"
-                        title="previous"
-                    />
-                    <area
-                        href="https://baccyflap.com/noai/?rnd"
-                        target="_top"
-                        shape="rect"
-                        coords="137,36,211,58"
-                        alt="random"
-                        title="random"
-                    />
-                    <area
-                        href="https://baccyflap.com/noai/?nxt&s=clz"
-                        target="_top"
-                        shape="rect"
-                        coords="218,36,292,58"
-                        alt="next"
-                        title="next"
-                    />
-                </map>
-                <img
-                    usemap="#w95widget"
-                    src="https://baccyflap.com/noai/w95widget.gif"
-                    alt="a gray Windows 95 style dialog box titled 'The No AI Webring' with a little icon showing a computer chip in a rubbish bin. beside it are three clickable buttons, labeled Previous, Random... and Next"
-                />
-                <br />
-            </div>
-
-            <!--SWAGRING-->
-            <div>
-                <a href="https://webring.nomaakip.xyz/webring?name=crislzy&to=prev">
-                    <img src="https://webring.nomaakip.xyz/img/webring-left.png" />
-                </a>
-                <a href="https://webring.nomaakip.xyz">
-                    <img src="https://webring.nomaakip.xyz/img/webring.png" />
-                </a>
-                <a href="https://webring.nomaakip.xyz/webring?name=crislzy&to=next">
-                    <img src="https://webring.nomaakip.xyz/img/webring-right.png" />
-                </a>
-            </div>
-
-            <!--BUCKETRING-->
-            <div>
-                <iframe
-                    id="bucket-webring"
-                    style="width: 100%; height: 3rem; border: none;"
-                    src="https://webring.bucketfish.me/embed.html?name=crislzy&lightmode=true"
-                ></iframe>
-            </div>
-
-            <!--MEOWRING-->
-            <link
-                rel="stylesheet"
-                type="text/css"
-                href="https://webring.crislzy.xyz/styles/example.css"
-            />
-            <div class="widget">
-                <a href="https://webring.crislzy.xyz/webring.html?name=crislzy&to=prev">
-                    Prev
-                </a>
-                <a href="https://webring.crislzy.xyz">MeowRing</a>
-                <a href="https://webring.crislzy.xyz/webring.html?name=crislzy&to=next">
-                    Next
-                </a>
             </div>
         </div>
     </section>

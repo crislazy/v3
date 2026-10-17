@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+.webrings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+h1,h2,h3,p {
+    margin: 5px;
+}
+
+.ring {
+    font-family: "DM Sans", sans-serif;
+    display: block;
+    position: relative;
+    width: 600px;
+    padding: 4px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+    background: var(--ring-bg);
+    border: 3px solid var(--ring-border);
+    font-weight: bold;
+}
+
+.ring a {
+    color: var(--ring-text);
+    text-decoration: none;
+}
+
+.ring a:first-child {
+    float: left;
+}
+
+.ring a:last-child {
+    float: right;
+}
+
+.random {
+    font-size: 12px;
+}
+
+.random:after {
+    content: '(random)';
+}
+
+.humanring {
+    --ring-bg: gray;
+    --ring-text: white;
+    --ring-border: white;
+}
+
+.noai {
+    --ring-bg: white;
+    --ring-text: black;
+    --ring-border: black;
+}
+
+.swagring {
+    --ring-bg: #34303a;
+    --ring-text: white;
+    --ring-border: #47424f;
+}
+
+.bucketring {
+    --ring-bg: #454545;
+    --ring-text: #ccafe9;
+    --ring-border: #2c2c2c;
+}
+
+.bucketring .title {
+    background: linear-gradient(to right, #ffcaca, #fffbca, #cafff3, #cadaff, #ebcaff, #aeaeae, #ffcaca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.meowring {
+    --ring-bg: white;
+    --ring-text: #ff8ba7;
+    --ring-border: #f2c6de;
+    border-radius: 10px;
+    border-style: dashed;
+}
+
+.sillycity {
+    --ring-bg: linear-gradient(90deg, #fca4cbee 0%, #fcd4a4ee 100%);
+    --ring-text: #ff0073;
+}
+
+.webmaster {
+    --ring-bg: #2da5d8;
+    --ring-text: white;
+    border-radius: 10px;
+}
+
+
+/* Smaller screens*/
+@media (max-width: 640px) {
+    .ring {
+        width: 100%;
+        padding: 4px;
+        font-size: 15px;
+        border-width: 2px;
+    }
+
+    .random {
+        font-size: 10px;
+    }
+
+    .webrings {
+        width: 100%;
+    }
+
+    #NYAN_ {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Extra-small phones */
+@media (max-width: 380px) {
+    .ring {
+        font-size: 13px;
+        padding: 3px;
+    }
+
+    .random {
+        font-size: 9px;
+    }
+}

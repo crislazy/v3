@@ -290,18 +290,6 @@ ul li::before {
     text-decoration: none;
 }
 
-.webrings {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.webrings > div {
-    display: flex;
-    justify-content: center;
-}
-
 .skill-icons {
     display: flex;
     flex-wrap: wrap;
@@ -372,6 +360,27 @@ ul li::before {
 
 /* Mobile fixes */
 @media (max-width: 700px) {
+    .nav {
+        width: calc(100% - 20px);
+        max-width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+        overflow: visible;
+    }
+
+    .nav-brand {
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 8px 12px;
+        font-size: 13px;
+    }
+
     main {
         padding: 12px 0 30px;
         gap: 14px;
@@ -384,7 +393,6 @@ ul li::before {
         max-width: 100%;
     }
 
-    /* Stack your about section vertically */
     .hero {
         flex-direction: column;
         gap: 16px;
@@ -406,7 +414,6 @@ ul li::before {
         overflow-wrap: anywhere;
     }
 
-    /* Make headings fit smaller screens */
     h1 {
         font-size: clamp(1.6rem, 7vw, 2.2rem);
         text-align: center;
@@ -420,14 +427,12 @@ ul li::before {
         font-size: 1.1rem;
     }
 
-    /* Prevent coding stats images from overflowing */
     .coding-stats img {
         width: 100%;
         max-width: 100%;
         height: auto;
     }
 
-    /* Let project cards use the available width */
     .projects-tab {
         margin-left: 0;
     }
@@ -437,12 +442,10 @@ ul li::before {
         overflow-wrap: anywhere;
     }
 
-    /* Keep long contact links from breaking the layout */
     #contact li {
         overflow-wrap: anywhere;
     }
 
-    /* Wrap footer items if needed */
     .footer-1 {
         flex-wrap: wrap;
         justify-content: center;
