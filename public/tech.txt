@@ -33,6 +33,10 @@ A list of tech I use almost daily
 // Storage-1: 64 GB MicroSD
 // Storage-2: 1 TB USB HDD
 
+// -> CONSOLE
+// Brand: XBOX
+// Version: ONE S DIGITAL
+// Storage: 1TB HDD
 
 ===== Other Stuff I Use =====
 
@@ -44,7 +48,6 @@ A list of tech I use almost daily
 
 // -> MAIN MOUSE
 // Model: Asus Marshmellow MD100
-
 
 ---------------------------
 -> Crislzy.xyz / 2026

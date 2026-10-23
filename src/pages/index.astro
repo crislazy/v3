@@ -1,6 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LastFm from "../components/lastfm.astro";
+
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const latest = posts[0];
 ---
 
 <BaseLayout title="Cris">
@@ -22,11 +29,11 @@ import LastFm from "../components/lastfm.astro";
             </p>
             <p>
                 I sometimes code random stuff like Discord/Slack bots and random
-                websites "for fun"(I'm just bored...)
+                websites "for fun"(I'm just bored...) And I also make random stuff for random HackClub YSWS's
             </p>
             <p>
                 I also enjoy self-hosting(until an error pops up a few times
-                then I mostly ragequit...)
+                then I mostly ragequit...) and I have a Raspberry Pi home server that is sometimes online sometimes not :/
             </p>
             <p>
                 Here's a really cool list of stuff I use:
@@ -87,6 +94,24 @@ import LastFm from "../components/lastfm.astro";
             alt="heatmap"
             loading="lazy"
         />
+    </section>
+    <section class="blog-post-index">
+        <h2>Latest Post</h2>
+
+        {latest ? (
+            <article class="post-card-index">
+
+                <h3>
+                    <a href={`/blog/${latest.id}/`}>
+                        "{latest.data.title}" - {latest.data.date.toDateString()}
+                    </a>
+                </h3>
+            </article>
+        ) : (
+            <p>No posts yet. Check back later!</p>
+        )}
+
+        <a href="/blog/">See all posts</a>
     </section>
     <section id="contact">
         <h2>Contact and other stuff</h2>
@@ -205,6 +230,15 @@ import LastFm from "../components/lastfm.astro";
         </a>
         <a href="https://kanandraw.neocities.org/">
             <img src="https://kanandraw.neocities.org/stampimg/kananbutton.gif" />
+        </a>
+        <a href="https://sidneyscape.space/">
+            <img src="https://sidneyscape.space/sidneyscape-button.gif" />
+        </a>
+        <a href="https://petrapixel.neocities.org/" target="_blank">
+            <img
+            src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif"
+            alt="petrapixel"
+            />
         </a>
     </section>
     <div class="easter-egg">

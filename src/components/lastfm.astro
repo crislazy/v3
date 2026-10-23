@@ -20,7 +20,7 @@
                 `${playing ? "Playing" : "Last played"}:`;
 
             document.getElementById("lastfm-song").textContent =
-                `${track.name} by ${track.artist["#text"]}`;
+                `${track.name} - ${track.artist["#text"]}`;
         } catch {
             document.getElementById("lastfm-prefix").textContent = "Last.fm:";
             document.getElementById("lastfm-song").textContent = "unavailable";

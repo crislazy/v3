@@ -61,12 +61,8 @@ const { title = "Cris" } = Astro.props;
     <body>
         <main>
             <nav class="nav">
-                <a href="/" class="nav-brand">
-                    <img
-                        src="https://cdn.hackclub.com/01a096bf-e2cb-7e4c-aa9e-98303a253dce/pfp.png"
-                        alt="Cris"
-                    />
-                    <span>~/crislzy</span>
+                <a href="/" class="nav-1">
+                    <span>Home :3</span>
                 </a>
 
                 <div class="nav-links">
@@ -74,7 +70,6 @@ const { title = "Cris" } = Astro.props;
                         type="text/javascript"
                         src="https://counter.websiteout.com/js/8/0/982/0"
                     ></script>
-                    <a href="/">[Home]</a>
                     <a href="/#contact">[Contact]</a>
                     <a href="/projects">[Projects]</a>
                     <a href="/webrings">[Webrings]</a>
@@ -96,7 +91,8 @@ const { title = "Cris" } = Astro.props;
             <script is:inline src="/js/lastupdate.js" />
         </section>
         <br />
-
+        <!--Slack Emoji Importer-->
+        <script src="/js/emojis.js" is:inline defer></script>
         <!--Oneko Cat Script-->
         <script src="/js/oneko.js" is:inline></script>
         <!-- Umami Script-->
